@@ -1,0 +1,43 @@
+{
+  "name": "contained",
+  "version": "0.1.0",
+  "description": "Simple to use Backend Node Framework: ESNext + Graphql + Prisma + Koa.  Almost none of the Boilderplate",
+  "main": "index.js",
+  "module": "./lib/containedyarn.js",
+  "bin": {
+    "contained": "./bin/contained"
+  },
+  "repository": "https://github.com/contained/contained.git",
+  "author": "fbrbovic@contained.cloud",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.56",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.56",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.56",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.56",
+    "@babel/preset-env": "^7.0.0-beta.56",
+    "@babel/runtime": "^7.0.0-beta.56",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-ramda": "^1.6.2",
+    "koa": "^2.5.2",
+    "koa-webpack": "^5.1.0",
+    "ramda": "^0.25.0",
+    "webpack": "^4.16.4",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.4.2",
+    "babel-polyfill": "^6.26.0",
+    "jest": "^23.4.2",
+    "rollup": "^0.63.5",
+    "rollup-plugin-babel": "^4.0.0-beta.8",
+    "rollup-plugin-commonjs": "^9.1.4"
+  }
+}

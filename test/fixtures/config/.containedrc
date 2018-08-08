@@ -1,0 +1,6 @@
+{
+  "env": "test'",
+  "port": 6666,
+  "wsPort": 7777,
+  "localTest": true
+}

@@ -10,6 +10,11 @@
   "repository": "https://github.com/contained/contained.git",
   "author": "fbrbovic@contained.cloud",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext .js,.mjs src test",
+    "lint:fix": "eslint --fix --ext .js,.mjs src test",
+    "test": "jest"
+  },
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.0.0"
@@ -29,12 +34,21 @@
     "koa": "^2.5.2",
     "koa-webpack": "^5.1.0",
     "ramda": "^0.25.0",
+    "rc": "^1.2.8",
     "webpack": "^4.16.4",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.2",
     "babel-polyfill": "^6.26.0",
+    "eslint": "^5.3.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "jest": "^23.4.2",
     "rollup": "^0.63.5",
     "rollup-plugin-babel": "^4.0.0-beta.8",

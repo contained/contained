@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Simple to use Backend Node Framework: ESNext + Graphql + Prisma + Koa.  Almost none of the Boilderplate",
   "main": "index.js",
-  "module": "./lib/containedyarn.js",
+  "module": "./src/Contained.js",
   "bin": {
     "contained": "./bin/contained"
   },

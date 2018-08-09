@@ -5,7 +5,7 @@ describe('Config.', () => {
     test('Config Value', () => {
       process.env.contained_localTest = 'yes'
       const config = new Config()
-      expect(config.config.localTest).toBe('yes')
+      expect(config.localTest).toBe('yes')
     })
   })
 })

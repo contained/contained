@@ -9,11 +9,11 @@ export default class Config {
    * @param options
    */
   constructor(options = {}) {
-    this.config = rc('contained', Config.returnDefault())
-    this.config = { ...this.config, ...options }
+    const rcOptions = rc('contained', Config._$returnDefault())
+    Object.assign(this, rcOptions, options)
   }
 
-  static returnDefault() {
+  static _$returnDefault() {
     return {
       'env': 'dev',
       'port': 3000,

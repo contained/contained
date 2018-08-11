@@ -17,7 +17,8 @@ export default class Config {
     return {
       'env': 'dev',
       'port': 3000,
-      'wsPort': 5000
+      'wsPort': 5000,
+      'host': 'localhost'
     }
   }
 }

@@ -1,3 +1,6 @@
+<p align="center">
+ <a href="https://travis-ci.org/contained/contained"><img src="https://travis-ci.org/contained/contained.svg?branch=master" alt="Build Status"></a>
+</p>
 # contained
 Simple Backend Framework With Graphql
 ## Using Contained

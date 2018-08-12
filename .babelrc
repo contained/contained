@@ -9,18 +9,11 @@
         }]
       ],
       "plugins": [
-        "dynamic-import-node",
-        "transform-export-extensions",
-        "transform-decorators-legacy",
-        "transform-class-properties",
-        "transform-object-rest-spread",
-        "add-module-exports",
-        [ "provide-modules", {
-          "debug": "debug"
-        } ],
-        [ "module-resolver", {
-          "root": [ "./src" ]
-        } ]
+        "@babel/plugin-proposal-class-properties",
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-syntax-dynamic-import",
+        "@babel/plugin-transform-runtime"
       ]
     }
   }

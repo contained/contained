@@ -1,5 +1,8 @@
 <p align="center">
  <a href="https://travis-ci.org/contained/contained"><img src="https://travis-ci.org/contained/contained.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/contained/contained">
+  <img src="https://codecov.io/gh/contained/contained/branch/master/graph/badge.svg" />
+</a>
 </p>
 # contained
 Simple Backend Framework With Graphql

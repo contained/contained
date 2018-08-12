@@ -13,7 +13,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.mjs src test",
     "lint:fix": "eslint --fix --ext .js,.mjs src test",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "codecov"
   },
   "engines": {
     "node": ">=8.0.0",

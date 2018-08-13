@@ -1,8 +1,9 @@
+import http from 'http'
 import consola from 'consola'
 import Koa from 'koa'
 // import koaWebpack from 'koa-webpack'
 import KoaRouter from 'koa-router'
-import { ApolloServer, gql } from 'apollo-server-koa'
+import {ApolloServer} from 'apollo-server-koa'
 import KoaLogger from 'koa-logger'
 import Base from './Base'
 import Config from './Config'
@@ -35,20 +36,10 @@ export default class Contained extends Base {
         consola.info(args)
       }))
 
-      // Construct a schema, using GraphQL schema language
-      const typeDefs = gql`
-        type Query {
-          hello: String
-        }
-      `
-      // Provide resolver functions for your schema fields
-      const resolvers = {
-        Query: {
-          hello: () => 'Hello world!'
-        }
-      }
-      this.apolloServer = new ApolloServer({ typeDefs, resolvers })
+      this.apolloServer = new ApolloServer(this.config.$getApolloConfig())
       this.apolloServer.applyMiddleware({ app: this.app })
+      this.httpServer = http.createServer(this.app)
+      this.apolloServer.installSubscriptionHandlers(this.httpServer)
     } catch (err) {
       consola.fatal(err)
     }
@@ -62,14 +53,19 @@ export default class Contained extends Base {
   }
 
   async _startApp() {
-    this.server = this.app.listen(this.config.port, () => {
-      consola.info(`Contained listening on http://${this.config.host}:${this.config.port}`)
+    let promise = await new Promise((resolve, reject) => {
+      this.httpServer.listen(this.config.port, () => {
+        consola.info(`Contained GraphQL is listening on http://${this.config.host}:${this.config.port}${this.apolloServer.graphqlPath}`)
+        consola.info(`Contained GraphQL subscriptions are on ws://${this.config.host}:${this.config.port}${this.apolloServer.subscriptionsPath}`)
+        resolve()
+      })
     })
+    return promise
   }
 
   async _setupAfterStartup() {
-    await this.callHook('started', this)
     consola.ready('Contained Fully Started')
+    await this.callHook('started', this)
   }
 
   listen(port, host) {

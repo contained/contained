@@ -9,7 +9,7 @@ describe('General.', () => {
       jest.spyOn(consola, 'ready')
       jest.spyOn(consola, 'info')
       contained.registerHook('started', (ctx) => {
-        console.log(ctx)
+        // console.log(ctx)
         expect(consola.start).toHaveBeenCalledWith('Starting Contained Server...')
         expect(consola.info).toHaveBeenCalledWith('Setting Up Core Middleware...')
         expect(consola.info).toHaveBeenCalledWith('Finished Setting up Core Middleware...')

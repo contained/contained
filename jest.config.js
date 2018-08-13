@@ -11,6 +11,5 @@ module.exports = {
   },
   expand: true,
   forceExit: true,
-  detectOpenHandles: true,
   verbose: true
 }

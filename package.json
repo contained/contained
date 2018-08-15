@@ -14,7 +14,8 @@
     "lint": "eslint --ext .js,.mjs src test",
     "lint:fix": "eslint --fix --ext .js,.mjs src test",
     "test": "jest",
-    "coverage": "codecov"
+    "coverage": "codecov",
+    "build": "cross-env NODE_ENV=production node tools/build"
   },
   "engines": {
     "node": ">=8.0.0",
@@ -52,6 +53,7 @@
     "babel-jest": "^23.4.2",
     "babel-polyfill": "^6.26.0",
     "codecov": "^3.0.4",
+    "cross-env": "^5.2.0",
     "eslint": "^5.3.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
